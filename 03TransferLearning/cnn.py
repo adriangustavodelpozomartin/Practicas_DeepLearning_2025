@@ -7,7 +7,6 @@ import torchvision
 from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import transforms
-from results import Results
 from tempfile import TemporaryDirectory
 import json
 
@@ -152,7 +151,7 @@ class CNN(nn.Module):
             predicted_labels.extend(outputs.argmax(1).tolist())
         return predicted_labels
         
-    def save(self, filename: str):
+    def save_model(self, filename: str):
         """Save the model to disk.
 
         Args:
